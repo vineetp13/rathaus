@@ -15,3 +15,8 @@ angular.module('toolTrialApp')
       'Karma'
     ];
   });
+
+    var test="Hola!";
+  console.log(test);
+  angular.toJson(test,true);
+
