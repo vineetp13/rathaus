@@ -13,14 +13,22 @@
     HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
   </p>
 
-  testString="Hola!"
-  console.log(testString)
-
   <h4>Angular</h4>
   <p>
     AngularJS is a toolset for building the framework most suited to your application development.
   </p>
 
   <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
+  <p>Spectacular Test Runner for JavaScript</p>
+
+<form>
+    <div ng-repeat="lang in languages">
+      <label>{{lang.name}}</label>
+      <input type="range" min="0" max="4" ng-model="lang.value" >
+    </div>
+    <button ng-click="save()">Save</button>
+    <p>{{msg}}</p>
+    <p>{{languages}}</p>
+</form>
+
 </div>

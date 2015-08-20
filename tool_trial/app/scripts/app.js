@@ -1,5 +1,9 @@
 'use strict';
 
+//the require keyword cannot be used here
+//var express = require('express');
+//var app = express();
+
 /**
  * @ngdoc overview
  * @name toolTrialApp
