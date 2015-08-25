@@ -6,6 +6,22 @@
 // 'test/spec/{,*/}*.js'
 // use this if you want to recursively match all subfolders:
 // 'test/spec/**/*.js'
+//
+
+function yourCallback(){
+    console.log("callback receiveddddd");
+}
+
+var fs = require("fs");
+var myJson = {
+        key: "myvalue"
+};
+
+fs.writeFile( "filename.json", JSON.stringify( myJson ), "utf8", yourCallback );
+
+// And then, to read it...
+// myJson = require("./filename.json");
+//}
 
 module.exports = function (grunt) {
 

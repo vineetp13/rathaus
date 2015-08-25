@@ -8,14 +8,14 @@
  * Controller of the toolTrialApp
  */
 angular.module('toolTrialApp')
-  .controller('AboutCtrl', function ($scope) {
+  .controller('About2Ctrl', function ($scope) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
 
- $scope.msg="About";
+ $scope.msg="About2";
   $scope.save = function() {
     /*$http.post('path/to/server/file/to/save/json', $scope.languages).then(function(data) {
       $scope.msg = 'Data saved';

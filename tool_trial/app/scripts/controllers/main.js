@@ -7,17 +7,16 @@
  * # MainCtrl
  * Controller of the toolTrialApp
  */
-var app = angular.module('toolTrialApp');
-
-
-  app.controller('MainCtrl', function ($scope) {
+//var app = 
+angular.module('toolTrialApp')
+.controller('MainCtrl', function ($scope) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
 
-  $scope.languages = [        
+  $scope.languages = [
     {name:"English", value:0},
     {name:"Spanish", value:1},
     {name:"German", value:3},

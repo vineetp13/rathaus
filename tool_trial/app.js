@@ -10,8 +10,25 @@ var users = require('./routes/users');
 
 var app = express();
 
+//app.use('/users/:username', users.view);
+
+function yourCallback(){
+    console.log("callback received");
+}
+
+// Writing...
+ var fs = require("fs");
+ var myJson = {
+     key: "myvalue"
+     };
+//
+
+//     // And then, to read it...
+     //myJson = require("./filename.json");
+// }
+
 // view engine setup
-app.set('views', path.join(__dirname, 'app')); //edit by vineet
+app.set('views', path.join(__dirname, 'views')); //edit by vineet
 app.set('view engine', 'jade');
 
 // uncomment after placing your favicon in /public
@@ -20,12 +37,12 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'app'))); //edit by vineet
+app.use(express.static(path.join(__dirname, 'public'))); //edit by vineet
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 app.use('/styles',  express.static(__dirname + '/styles'));
 
-//app.use('/', routes); //edit by vineet
-//app.use('/users', users);
+app.use('/', routes); //edit by vineet
+app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -58,5 +75,8 @@ app.use(function(err, req, res, next) {
   });
 });
 
+
+     fs.writeFile( "filename.json", JSON.stringify( myJson ), "utf8",
+     yourCallback );
 
 module.exports = app;
