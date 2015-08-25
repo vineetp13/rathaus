@@ -17,7 +17,7 @@ var myJson = {
         key: "myvalue"
 };
 
-fs.writeFile( "filename.json", JSON.stringify( myJson ), "utf8", yourCallback );
+fs.writeFile( "testfile.json", JSON.stringify( myJson ), "utf8", yourCallback );
 
 // And then, to read it...
 // myJson = require("./filename.json");

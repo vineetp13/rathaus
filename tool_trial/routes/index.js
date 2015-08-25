@@ -7,6 +7,11 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+router.get('/test', function(req, res, next) {
+  res.render('index_test', { title: 'Express test tada!' });
+});
+
+
 /*
 router.view = function(req,res){
     res.render('main');
