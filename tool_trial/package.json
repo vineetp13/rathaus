@@ -43,6 +43,6 @@
   },
   "scripts": {
     "test": "grunt test",
-    "start": "node ./bin/www"
+    "start": "DEBUG=node:* ./bin/www"
   }
 }

@@ -1,5 +1,36 @@
-extends layout
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(type='text/javascript', src='../../bower_components/jquery/dist/jquery.js')
+    script(type='text/javascript', src='/javascripts/index_test.js')
+
+
+  body
+    block content
+    //div(id="images")
+    div#images
 
 block content
   h1= title
   p Welcome to this  #{title}
+
+script.
+  console.log("in script in index_test");
+  (function(){
+  	var flickerAPI = "http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?";
+  	$.getJSON( flickerAPI,{
+  		tags:"mount rainier",
+  		tagmode:"any",
+  		format:"json"
+  		})
+  	.done(function(data){
+  		$.each( data.items, function( i, item ) {
+  			$( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
+  			if ( i === 3 ) {
+  				return false;
+  				}
+  				});
+  		});
+  	})();

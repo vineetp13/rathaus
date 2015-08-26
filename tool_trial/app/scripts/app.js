@@ -34,9 +34,9 @@ angular
         controllerAs: 'about2'
       })
       .when('/users', {
-        templateUrl: 'views/users.html',
-        controller: 'UsersCtrl',
-        controllerAs: 'users'
+        templateUrl: 'views/user.html',
+        controller: 'UserCtrl',
+        controllerAs: 'user'
       })
       .when('/error', {
         templateUrl: 'views/error.html',

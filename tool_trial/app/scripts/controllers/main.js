@@ -9,7 +9,7 @@
  */
 //var app = 
 angular.module('toolTrialApp')
-.controller('MainCtrl', function ($scope, $http) {
+.controller('MainCtrl', function ($scope) {
     this.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
@@ -37,26 +37,68 @@ angular.module('toolTrialApp')
   console.log(json_ob_req);
   //req.send(json_ob_req);
 
-  $http.defaults.useXDomain = true; //trying to fix the errors
-  console.log($http.defaults.useXDomain);
+  //$http.defaults.useXDomain = true; //trying to fix the errors
+  //console.log($http.defaults.useXDomain);
+
+
+/*
+  function successCallback_get(){
+    console.log("successCallback_get called");
+  }
+  $http.get('/#/usershhkhkh').then(successCallback_get);
+  */
+
+/*
+
+function successCallback_post(){
+    console.log("successCallback_post called");
+  }  
+  
+  //var data = 23;
+
+  
+  $http.post('/#/', {msg:'hello word!'}).then(successCallback_post);
+  */
+
+  $.get("/#/nernveqfnbknafekbnaklusers");
+  $.get( "/ufkjafkjarjkn", function( data ) {
+  console.log( "Data Loaded: " + data );
+})
+  .done(function(){
+    console.log("done");
+  })
+  .fail(function(){
+    console.log("fail");
+  })
+  .always(function(){
+    console.log("always alert");
+  });
+  //$.post( "." );
+
+/*
   $http({
-        url: 'http://localhost/user',
+        //url: 'http://localhost:9000/#/users',
+        url: 'http://www.google.com',
         method: "POST",
-        data: JSON.stringify({json_ob_req: json_ob_req}),
-        headers: {'Content-Type': 'application/json'}
+        //data: JSON.stringify({json_ob_req: json_ob_req}),
+        data: json_ob_req,
+        headers: {'Content-Type': 'application/json'}        
       }).success(function (data) {
         //success(function (data, status, headers, config) {
           console.log("post success");
             $scope.users = data.users; // assign  $scope.persons here as promise is resolved here 
-        }).error(function (status, headers) {
+        }).error(function (url,status, data, headers) {
           //}).error(function (data, status, headers, config) {
             console.log("post failure");
-            $scope.status = status + ' LALA  ' + headers;
+            console.log(url);
+            console.log(data);
+            console.log("post failure");
+            $scope.status = status +' LALA  ' + headers;
             console.log($scope.status);
-            console.trace();
-            console.log($http.defaults.useXDomain);
+            //console.trace();
+            //console.log($http.defaults.useXDomain);
         }); 
-
+*/
   };
 
 console.log($scope.languages);

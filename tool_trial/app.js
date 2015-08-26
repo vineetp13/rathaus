@@ -24,7 +24,8 @@ function yourCallback(){
 //
 
 //     // And then, to read it...
-     //myJson = require("./filename.json");
+     //myJson1 = require("./filename.json");
+     //console.log(myJson1);
 // }
 
 // view engine setup
@@ -37,7 +38,7 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'app'))); //edit by vineet
+app.use(express.static(path.join(__dirname, 'public'))); //edit by vineet
 app.use('/bower_components',  express.static(__dirname + '/bower_components'));
 app.use('/styles',  express.static(__dirname + '/styles'));
 
@@ -76,7 +77,18 @@ app.use(function(err, req, res, next) {
 });
 
 
-     fs.writeFile( "filename.json", JSON.stringify( myJson ), "utf8",
-     yourCallback );
+     fs.writeFileSync( "file_trial.json", JSON.stringify( myJson ), "utf8",
+     function(err){
+         if(err){
+            console.log(err);
+         }
+         else{
+             console.log("file saved");
+         }
+     });
+     //fs.close("filename.json");
+     //
+     myJson1 = require("./file_trial.json");
+     console.log(myJson1);
 
 module.exports = app;
