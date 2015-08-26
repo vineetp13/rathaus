@@ -1,5 +1,14 @@
 extends layout
-
+   
 block content
-  p welcome to user who is  #{name} 
+  p !{json_ob} 
+  p !{json_ob.result}
+  p !{json_ob.name}
+   p ---
+    each val, key in json_ob
+     p #{key}: #{val}
+  //-var ob = JSON.parse({name})
+  p welcome to user who is #{json_ob.name} and #{json_ob.id}
+
+
   

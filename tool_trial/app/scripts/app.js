@@ -33,6 +33,16 @@ angular
         controller: 'About2Ctrl',
         controllerAs: 'about2'
       })
+      .when('/users', {
+        templateUrl: 'views/users.html',
+        controller: 'UsersCtrl',
+        controllerAs: 'users'
+      })
+      .when('/error', {
+        templateUrl: 'views/error.html',
+        controller: 'ErrorCtrl',
+        controllerAs: 'error'
+      })
       .otherwise({
         redirectTo: '/'
       });
