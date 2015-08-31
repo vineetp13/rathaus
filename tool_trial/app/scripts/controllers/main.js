@@ -16,7 +16,7 @@ angular.module('toolTrialApp')
       'Karma'
     ];
 
-    
+
 /*
 jquery attempt at posting
         $.ajax({
@@ -79,8 +79,8 @@ function successCallback_post(){
   $http.post('/#/', {msg:'hello word!'}).then(successCallback_post);
   */
 
-  $.get("/#/nernveqfnbknafekbnaklusers");
-  $.get( "/ufkjafkjarjkn", function( data ) {
+  //$.get("/#/nernveqfnbknafekbnaklusers");
+  $.get( "/users", function( data ) {
   console.log( "Data Loaded: " + data );
 })
   .done(function(){
