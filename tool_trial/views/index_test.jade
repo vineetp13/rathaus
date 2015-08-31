@@ -34,3 +34,44 @@ script.
   				});
   		});
   	})();
+    console.log("out of script in index_test");
+
+
+script.
+//
+  console.log("in script in index_test - get");
+  (function(){
+      $.ajax({
+  type: "GET",
+  url: "",
+  data: $("").serialize()//"name=John&location=Boston"
+  })
+      .done( function(msg) {
+  alert( "Data Saved: " + msg );
+  })    
+      .fail( function( xmlHttpRequest, statusText, errorThrown ) { 
+  console.log("fvawfwgfa");
+  });})();
+  console.log("out of script in index_test - get");
+
+script.
+  console.log("in script in index_test - post");
+  (function(){
+      $.ajax({
+  type: "POST",
+  url: "..",
+  //data: $({lastname:"pandey" })//.serialize()//"name=John&location=Boston"
+  data: {
+      tags:"mount rainier",
+      tagmode:"any",
+      format:"json"
+      }
+  })
+      .done( function(msg) {
+  console.log( "Data Saved: " + msg + "VINEET" );
+  console.log("post success");
+  })    
+      .fail( function( xmlHttpRequest, statusText, errorThrown ) { 
+  console.log("post fail");
+  });})();
+  console.log("out of script in index_test - post");

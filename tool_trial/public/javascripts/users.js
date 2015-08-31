@@ -4,7 +4,7 @@ console.log("in users.js in public");
 function something($http) {
 	console.log("in function something");
   $http({
-        url: '/users',
+        url: '',
         method: "POST",
         data: '',//JSON.stringify({json_ob_req: json_ob_req}),
         headers: {'Content-Type': 'application/json'}

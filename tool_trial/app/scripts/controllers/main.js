@@ -16,6 +16,25 @@ angular.module('toolTrialApp')
       'Karma'
     ];
 
+    
+/*
+jquery attempt at posting
+        $.ajax({
+  type: "POST",
+  url: "",
+  data: ""//"name=John&location=Boston"
+}).done( function(msg) {
+  window.alert( "Data Saved: " + msg );
+}).fail( function( xmlHttpRequest, statusText, errorThrown ) {
+  window.alert(
+    "Your form submission failed.\n\n" + 
+    "XML Http Request: " + 
+    JSON.stringify( xmlHttpRequest ) + 
+    ",\nStatus Text: " + statusText + 
+    ",\nError Thrown: " + errorThrown );
+});
+*/
+
   $scope.languages = [
     {name:"English", value:0},
     {name:"Spanish", value:1},

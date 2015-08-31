@@ -78,6 +78,26 @@
        ga('create', 'UA-XXXXX-X');
        ga('send', 'pageview');
     </script>
+ <script src="bower_components/jquery/dist/jquery.js"></script>
+
+
+    <script>
+    $.ajax({
+  type: "GET",
+  url: "",
+  data: $("").serialize()//"name=John&location=Boston"
+}).done( function(msg) {
+  alert( "Data Saved: " + msg );
+}).fail( function( xmlHttpRequest, statusText, errorThrown ) {
+  alert(
+    "Your form submission failed.\n\n"
+      + "XML Http Request: " + JSON.stringify( xmlHttpRequest )
+      + ",\nStatus Text: " + statusText
+      + ",\nError Thrown: " + errorThrown );
+});
+
+    </script>
+  
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
