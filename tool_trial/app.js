@@ -16,11 +16,38 @@ function yourCallback(){
     console.log("callback received");
 }
 
+var request = require("request");
+/*
+request("http://localhost:9000", function(error, response, body) {
+  console.log(body);
+});
+*/
+
+request({
+  uri: "http://localhost:3000",
+  method: "POST",
+  timeout: 10000,
+  followRedirect: true,
+  maxRedirects: 10,
+    form: {
+    name: "Bob"
+  }
+}, function(error, response, body) {
+  console.log(body);
+  console.log("printing error");
+  //console.log(error);
+  //console.log(response);
+});
+
+
+
 // Writing...
  var fs = require("fs");
  var myJson = {
      key: "myvalue"
      };
+
+     //request("http://www.sitepoint.com").pipe(fs.createWriteStream("jspro.htm"));
 //
 
 //     // And then, to read it...
