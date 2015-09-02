@@ -119,4 +119,13 @@ app.use(function(err, req, res, next) {
      myJson1 = require("./file_trial.json");
      console.log(myJson1);
 
+var exec = require('child_process').exec;
+var cmd = 'ls -Al';
+
+exec(cmd, function(error, stdout, stderr){
+  console.log(error);
+  console.log(error);
+  console.log(stdout);
+});
+
 module.exports = app;
