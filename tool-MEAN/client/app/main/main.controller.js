@@ -9,6 +9,15 @@ angular.module('toolMeanApp')
       socket.syncUpdates('thing', $scope.awesomeThings);
     });
 
+  /*
+    $scope.awesomeUsers = [];
+
+    $http.get('/api/users').success(function(awesomeUsers) {
+      $scope.awesomeUsers = awesomeUsers;
+      socket.syncUpdates('user', $scope.awesomeUsers);
+    });
+    */
+
     $scope.addThing = function() {
       if($scope.newThing === '') {
         return;

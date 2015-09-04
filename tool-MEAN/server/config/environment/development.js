@@ -8,5 +8,5 @@ module.exports = {
     uri: 'mongodb://localhost/toolmean-dev'
   },
 
-  seedDB: true
+  seedDB: false
 };

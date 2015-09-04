@@ -10,7 +10,13 @@ angular.module('toolMeanApp', [
 ])
   .config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
     $urlRouterProvider
-      .otherwise('/');
+      .otherwise(function(){
+        //'/'
+        console.log("does not exist");
+        document.write("does not exist");
+        // ABove is an example of DOM manipulation whcih should not be done
+        }
+        );
 
     $locationProvider.html5Mode(true);
     $httpProvider.interceptors.push('authInterceptor');
@@ -25,6 +31,7 @@ angular.module('toolMeanApp', [
           config.headers.Authorization = 'Bearer ' + $cookieStore.get('token');
         }
         return config;
+        
       },
 
       // Intercept 401s and redirect you to login

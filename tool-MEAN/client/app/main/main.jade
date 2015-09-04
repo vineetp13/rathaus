@@ -2,9 +2,9 @@ div(ng-include='"components/navbar/navbar.html"')
 
 header#banner.hero-unit
   .container
-    h1 'Allo, 'Allo!
-    p.lead Kick-start your next web app with Angular Fullstack
-    img(src='assets/images/yeoman.png', alt='I\'m Yeoman')
+    h1 Hallo!
+    p.lead Kick-start your proof writing with Rathaus
+    img(src='assets/images/rathaus.jpg', alt='I\'m Rathaus', height='100px')
 
 .container
   .row
@@ -15,6 +15,12 @@ header#banner.hero-unit
           a(href='#', tooltip='{{thing.info}}')
             | {{thing.name}}
             button.close(type='button', ng-click='deleteThing(thing)') ×
+
+      ul.nav.nav-tabs.nav-stacked.col-md-4.col-lg-4.col-sm-6(ng-repeat='user in awesomeUsers')
+        li
+          a(href='#')
+            | {{user.name}}
+            button.close(type='button', ng-click='deleteUser(user)') ×
 
   form.thing-form
     label Syncs in realtime across clients
